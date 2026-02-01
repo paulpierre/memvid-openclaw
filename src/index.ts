@@ -81,7 +81,7 @@ export function register(api: PluginApi): void {
         },
       },
     },
-    handler: async (params) => {
+    execute: async (_id: string, params: Record<string, unknown>) => {
       if (!manager) {
         return { ok: false, error: 'Memvid manager not initialized' };
       }
@@ -124,7 +124,7 @@ export function register(api: PluginApi): void {
         },
       },
     },
-    handler: async (params) => {
+    execute: async (_id: string, params: Record<string, unknown>) => {
       if (!manager) {
         return { ok: false, error: 'Memvid manager not initialized' };
       }
@@ -148,7 +148,7 @@ export function register(api: PluginApi): void {
       type: 'object',
       properties: {},
     },
-    handler: async () => {
+    execute: async (_id: string) => {
       if (!manager) {
         return { ok: false, error: 'Memvid manager not initialized' };
       }
@@ -175,7 +175,7 @@ export function register(api: PluginApi): void {
         },
       },
     },
-    handler: async (params) => {
+    execute: async (_id: string, params: Record<string, unknown>) => {
       if (!manager) {
         return { ok: false, error: 'Memvid manager not initialized' };
       }
