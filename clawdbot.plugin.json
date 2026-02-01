@@ -1,5 +1,5 @@
 {
-  "id": "memvid",
+  "id": "memvid-openclaw",
   "name": "Memvid Memory",
   "version": "0.1.0",
   "description": "Single-file AI memory layer with instant retrieval and long-term storage",

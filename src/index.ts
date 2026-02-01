@@ -8,7 +8,7 @@
 import { MemvidManager } from './memvid-manager.js';
 import type { MemvidConfig, MemvidStoreParams, MemvidSearchParams, MemvidSearchResult } from './types.js';
 
-export const id = 'memvid';
+export const id = 'memvid-openclaw';
 export const name = 'Memvid Memory';
 
 interface PluginApi {
@@ -47,7 +47,7 @@ interface ServiceDefinition {
 let manager: MemvidManager | null = null;
 
 export function register(api: PluginApi): void {
-  const config = api.config.plugins?.entries?.memvid?.config ?? {};
+  const config = api.config.plugins?.entries?.['memvid-openclaw']?.config ?? {};
   
   api.logger.info('Memvid plugin initializing...');
 
