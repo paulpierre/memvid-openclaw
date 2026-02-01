@@ -21,7 +21,7 @@ interface PluginApi {
   config: {
     plugins?: {
       entries?: {
-        memvid?: {
+        'memvid-openclaw'?: {
           config?: MemvidConfig;
         };
       };
