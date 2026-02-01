@@ -35,7 +35,7 @@ interface ToolDefinition {
   name: string;
   description: string;
   parameters: Record<string, unknown>;
-  handler: (params: Record<string, unknown>, ctx: unknown) => Promise<unknown>;
+  execute: (id: string, params: Record<string, unknown>) => Promise<unknown>;
 }
 
 interface ServiceDefinition {
