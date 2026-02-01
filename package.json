@@ -1,6 +1,6 @@
 {
   "name": "@paulpierre/memvid-openclaw",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Memvid memory plugin for Clawdbot - single-file AI memory with instant retrieval",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -29,7 +29,9 @@
     "url": "https://github.com/paulpierre/memvid-openclaw.git"
   },
   "clawdbot": {
-    "extensions": ["./dist/index.js"]
+    "extensions": [
+      "./dist/index.js"
+    ]
   },
   "dependencies": {
     "@memvid/sdk": "^2.0.155"
