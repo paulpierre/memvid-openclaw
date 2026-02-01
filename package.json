@@ -1,0 +1,52 @@
+{
+  "name": "@paulpierre/memvid-openclaw",
+  "version": "0.1.0",
+  "description": "Memvid memory plugin for Clawdbot - single-file AI memory with instant retrieval",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "lint": "eslint src/",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "clawdbot",
+    "clawdbot-plugin",
+    "memvid",
+    "ai-memory",
+    "rag",
+    "vector-search",
+    "embeddings"
+  ],
+  "author": "Paul Pierre <guitarsmith@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/paulpierre/memvid-openclaw.git"
+  },
+  "clawdbot": {
+    "extensions": ["./dist/index.js"]
+  },
+  "dependencies": {
+    "@memvid/sdk": "^2.0.155"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "typescript": "^5.7.0",
+    "vitest": "^3.0.0",
+    "eslint": "^9.0.0"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "files": [
+    "dist/",
+    "clawdbot.plugin.json",
+    "README.md",
+    "LICENSE"
+  ]
+}

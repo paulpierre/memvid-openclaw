@@ -1,0 +1,97 @@
+{
+  "id": "memvid",
+  "name": "Memvid Memory",
+  "version": "0.1.0",
+  "description": "Single-file AI memory layer with instant retrieval and long-term storage",
+  "kind": "memory",
+  "configSchema": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "storagePath": {
+        "type": "string",
+        "description": "Path to store memvid files (defaults to ~/.clawdbot/memvid)"
+      },
+      "defaultCollection": {
+        "type": "string",
+        "default": "memories",
+        "description": "Default collection name for storing memories"
+      },
+      "autoCapture": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "enabled": {
+            "type": "boolean",
+            "default": false,
+            "description": "Automatically capture memories from conversations"
+          },
+          "triggers": {
+            "type": "array",
+            "items": { "type": "string" },
+            "default": ["preference", "decision", "important", "remember"],
+            "description": "Keywords that trigger auto-capture"
+          }
+        }
+      },
+      "embedding": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "provider": {
+            "type": "string",
+            "enum": ["local", "openai"],
+            "default": "local",
+            "description": "Embedding provider (local uses ONNX models)"
+          },
+          "model": {
+            "type": "string",
+            "description": "Model name (e.g., bge-small-en-v1.5 for local, text-embedding-3-small for OpenAI)"
+          }
+        }
+      },
+      "search": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "topK": {
+            "type": "number",
+            "default": 10,
+            "description": "Number of results to return by default"
+          },
+          "snippetChars": {
+            "type": "number",
+            "default": 200,
+            "description": "Characters to include in result snippets"
+          },
+          "hybrid": {
+            "type": "boolean",
+            "default": true,
+            "description": "Use hybrid search (vector + BM25)"
+          }
+        }
+      }
+    }
+  },
+  "uiHints": {
+    "storagePath": {
+      "label": "Storage Path",
+      "placeholder": "~/.clawdbot/memvid"
+    },
+    "defaultCollection": {
+      "label": "Default Collection"
+    },
+    "autoCapture.enabled": {
+      "label": "Auto-Capture Enabled"
+    },
+    "autoCapture.triggers": {
+      "label": "Capture Triggers"
+    },
+    "embedding.provider": {
+      "label": "Embedding Provider"
+    },
+    "search.topK": {
+      "label": "Results Limit"
+    }
+  }
+}
